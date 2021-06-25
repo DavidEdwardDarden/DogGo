@@ -426,3 +426,9 @@ C:\Users\david\workspace\csharp\DogGo\DogGo\obj\Debug\net5.0\DogGo.genruntimecon
 C:\Users\david\workspace\csharp\DogGo\DogGo\obj\Debug\net5.0\Razor\Views\Walkers\Index.cshtml.g.cs
 C:\Users\david\workspace\csharp\DogGo\DogGo\obj\Debug\net5.0\Razor\Views\Walkers\Details.cshtml.g.cs
 C:\Users\david\workspace\csharp\DogGo\DogGo\obj\Debug\net5.0\Razor\Views\Owners\Index.cshtml.g.cs
+C:\Users\david\workspace\csharp\DogGo\DogGo\obj\Debug\net5.0\Razor\Views\Owners\Create.cshtml.g.cs
+C:\Users\david\workspace\csharp\DogGo\DogGo\obj\Debug\net5.0\Razor\Views\Owners\Delete.cshtml.g.cs
+C:\Users\david\workspace\csharp\DogGo\DogGo\obj\Debug\net5.0\Razor\Views\Owners\Edit.cshtml.g.cs
+C:\Users\david\workspace\csharp\DogGo\DogGo\obj\Debug\net5.0\Razor\Views\Dog\Index.cshtml.g.cs
+C:\Users\david\workspace\csharp\DogGo\DogGo\obj\Debug\net5.0\Razor\Views\Dog\Create.cshtml.g.cs
+C:\Users\david\workspace\csharp\DogGo\DogGo\obj\Debug\net5.0\Razor\Views\Dog\Delete.cshtml.g.cs
