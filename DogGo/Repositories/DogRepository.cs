@@ -208,24 +208,38 @@ namespace DogGo.Repositories
 
             using (SqlCommand cmd = conn.CreateCommand())
             {
-                cmd.CommandText = @"
-                            UPDATE Dog
-                            SET 
-                                [Name] = @name, 
-                                Email = @email, 
-                                Address = @address, 
-                                Phone = @phone, 
-                                NeighborhoodId = @neighborhoodId
-                            WHERE Id = @id";
+                    cmd.CommandText = @"
+                    INSERT INTO Dog ([Name], Breed, Notes, ImageUrl, OwnerId )
+                    OUTPUT INSERTED.ID
+                    VALUES (@name,@breed,@notes,@imageurl, @ownerid);
+                ";
 
-                cmd.Parameters.AddWithValue("@name", dog.Name);
-                cmd.Parameters.AddWithValue("@breed", dog.Breed);
-                cmd.Parameters.AddWithValue("@ownerId", dog.OwnerId);
-                cmd.Parameters.AddWithValue("@notes", dog.Notes);
-                cmd.Parameters.AddWithValue("@imageURL", dog.ImageURL);
-                cmd.Parameters.AddWithValue("@id", dog.Id);
+                    cmd.Parameters.AddWithValue("@name", dog.Name);
+                    cmd.Parameters.AddWithValue("@breed", dog.Breed);
+                    cmd.Parameters.AddWithValue("@ownerId", dog.OwnerId);
 
-                cmd.ExecuteNonQuery();
+
+
+                    if (dog.Notes == null)
+                    {
+                        cmd.Parameters.AddWithValue("@notes", DBNull.Value);
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@notes", dog.Notes);
+                    }
+
+
+                    if (dog.ImageURL == null)
+                    {
+                        cmd.Parameters.AddWithValue("@imageurl", DBNull.Value);
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@imageURL", dog.ImageURL);
+                    }
+
+                    cmd.ExecuteNonQuery();
             }
         }
     }
